@@ -1,0 +1,14 @@
+name: call API
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Make cURL request
+        run: |
+          curl -X GET https://timeconverter-d3a3.onrender.com/timeframe/sample
